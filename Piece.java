@@ -1,16 +1,26 @@
-package Piece;
+import Chessboard
 
-public class Piece{
-  String color;
-  String position;
-  int points;
-  
-  public Piece(String color, String position, int points){
+public abstract class Piece{
+  protected Position position;
+  protected Piececolor color;
+
+  public Piece(Piececolor color, Position position){
     this.color = color;
     this.position = position;
-    this.position = points;
   }
-  void move(String position){
-    // TODO: implement something
+
+  public Piececolor getColor(){
+    return color;
   }
+  
+  public Position getPosition(){
+    return position;
+  }
+
+  public Position setPosition(){
+    this.position = position;
+  }
+
+  public abstract boolean isValidMove(Position newPosition, Piece[][] board);
+
 }
